@@ -1,2 +1,2 @@
-# dueosrs-website
+# dueosrs
 DueOSRS group HCIM website
