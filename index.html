@@ -1,13 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DueOSRS</title>
-<link rel="stylesheet" href="styles.css"
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DueOSRS — Hardcore Ironmom</title>
+
+<!-- Fonts (gold medieval vibe for headers) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<h1>Welcome to DueOSRS</h1>
-<p>This is our Hardcore Ironman group website!</p>
+
+<!-- Sticky Nav -->
+<header class="site-header" id="home">
+<div class="container nav">
+<a class="brand" href="#home">DueOSRS</a>
+<nav class="links">
+<a href="#episodes">Episodes</a>
+<a href="#about">About</a>
+<a href="#links">My Links</a>
+</nav>
+</div>
+</header>
+
+<!-- Hero: full screen OSRS scene -->
+<section class="hero hero-osrs" aria-label="Lumbridge hero image">
+<!-- Set the background image here -->
+<div class="hero-bg" style="--hero:url('images/lumbridge-hero.jpg');"></div>
+
+<div class="container hero-inner">
+<h1 class="gold-title hero-title">HARDCORE IRONMOM</h1>
+<p class="gold-title hero-subtitle">The Kids of Karen protect Karen from CoX</p>
+</div><div class="hero-gradient" aria-hidden="true"></div>
+</section>
+
+<!-- Episodes -->
+<section id="episodes" class="section container">
+<h2 class="gold-title">HARDCORE IRONMOM</h2>
+<p class="section-sub">Latest episodes & highlights</p>
+<div class="thumb-grid">
+<a class="thumb" href="https://www.youtube.com/watch?v=VIDEO_ID_1" target="_blank" rel="noopener">
+<div class="thumb-placeholder"></div>
+<span>Ep 1 — KoKRing and Fishnets</span>
+</a>
+<a class="thumb" href="https://www.youtube.com/watch?v=VIDEO_ID_2" target="_blank" rel="noopener">
+<div class="thumb-placeholder"></div>
+<span>Ep 2 — Under Construction</span>
+</a>
+<a class="thumb" href="https://www.youtube.com/@DueOSRS/videos" target="_blank" rel="noopener">
+<div class="thumb-placeholder"></div>
+<span>Ep 3 — Under Construction</span>
+</a>
+</div>
+</section>
+
+<!-- About -->
+<section id="about" class="section container">
+<h2 class="gold-title">ABOUT</h2>
+<p class="section-sub">The KoKRing HC GIM Members</p>
+
+<div class="cards">
+<article class="card">
+<img class="pfp" src="images/stephen.jpg" alt="Stephen">
+<h3>Stephen</h3>
+<p>Destroyer of CoX, Humper of Goblins, Protector of Imbeciles. "Motherboy 5". OSRS 20 yr veteran</p>
+</article>
+
+<article class="card">
+<img class="pfp" src="images/karen.jpg" alt="Karen">
+<h3>Karen</h3>
+<p>Hardcore Ironmom. Grandmaster Bridge player irl. mother of 5 degenerate sons. "HARDCORNKAREN". New to OSRS</p>
+</article>
+
+<article class="card">
+<img class="pfp" src="images/joel.jpg" alt="Joel">
+<h3>Joel</h3>
+<p>Hostage, Hotsauce whore, profoundly r-worded. Motherboy 3. New to OSRS</p>
+</article>
+
+<article class="card">
+<img class="pfp" src="images/cameron.jpg" alt="Cameron">
+<h3>Cameron</h3>
+<p>PC Gamer, Cotton Candy Curator, questionable judgement when choosing friends. "And Cameron". New to OSRS</p>
+</article>
+</div>
+</section>
+
+<section id="links" class="section container">
+<h2 class="gold-title">MY LINKS</h2>
+
+<div class="socials">
+<a class="social youtube" href="https://youtube.com/@DueOSRS" target="_blank" rel="noopener" aria-label="YouTube">
+<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+<path fill="currentColor" d="M23.5 6.2a4 4 0 0 0-2.8-2.8C18.9 3 12 3 12 3s-6.9 0-8.7.4A4 4 0 0 0 .5 6.2 41 41 0 0 0 0 12a41 41 0 0 0 .5 5.8 4 4 0 0 0 2.8 2.8C4.9 21 12 21 12 21s6.9 0 8.7-.4a4 4 0 0 0 2.8-2.8A41 41 0 0 0 24 12a41 41 0 0 0-.5-5.8zM9.6 15.5V8.5L15.8 12l-6.2 3.5z"/>
+</svg>
+<span>YouTube</span>
+</a>
+
+<a class="social twitch" href="https://twitch.tv/dueosrs" target="_blank" rel="noopener" aria-label="Twitch">
+<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+<path fill="currentColor" d="M3 2h18v12.6l-4.6 4.4H12l-2.6 3H7.4V19H3V2zm16 11.4V4H5v12h3.4v3l3-3h5.4L19 13.4zM9.5 6.9h2V12h-2V6.9zm5 0h2V12h-2V6.9z"/>
+</svg>
+<span>Twitch</span>
+</a>
+
+<a class="social x" href="https://x.com/dueosrs" target="_blank" rel="noopener" aria-label="X">
+<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+<path fill="currentColor" d="M18.2 3H21l-6.6 7.5L22.4 21h-5.7l-4.5-6-5 6H3.3l7.1-8.5L1.9 3h5.8l4 5.4L18.2 3zM8.7 4.6H6.8l8.5 11.6h1.9L8.7 4.6z"/>
+</svg>
+<span>X</span>
+</a>
+</div>
+</section>
+
+<footer class="site-footer">
+<div class="container">© <span id="y"></span> DueOSRS</div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

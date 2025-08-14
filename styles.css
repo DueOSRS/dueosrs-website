@@ -1,44 +1,223 @@
-/* General Page Styles */
-body {
-font-family: Arial, sans-serif;
-background-color: #121212;
-color: #f5f5f5;
-margin: 0;
-padding: 0;
+/* ===== Base / Theme ===== */
+:root {
+--bg: #0f0f12;
+--fg: #f5f5f7;
+--muted: #b7b7c2;
+--accent: #ffd34d;
+--card: #17171c;
+--line: #2a2a31;
 }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { height: 100%; }
+body {
+margin: 0;
+font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+background: var(--bg);
+color: var(--fg);
+line-height: 1.6;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 48px 0; scroll-margin-top: 84px; }
+.section h2 { margin: 0 0 12px; }
 
-/* Header */
-header {
-background-color: #1f1f1f;
-padding: 1rem;
+/* ===== Header / Nav ===== */
+.site-header { position: sticky; top: 0; z-index: 20; background: rgba(15,15,18,.9); border-bottom: 1px solid var(--line); backdrop-filter: blur(8px); }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+.brand { color: var(--fg); text-decoration: none; font-weight: 800; letter-spacing: .5px; }
+.links a { color: var(--accent); text-decoration: none; margin-left: 18px; }
+.links a:hover { text-decoration: underline; }
+.hero-title {
+font-size: clamp(3rem, 6vw, 4rem); /* slightly bigger than other titles */
+margin-bottom: 0.5rem;
 text-align: center;
 }
 
-header h1 {
-margin: 0;
-font-size: 2rem;
-color: #ffcc00;
+.hero-subtitle {
+font-size: clamp(1.8rem, 3vw, 2.4rem); /* smaller than hero-title */
+font-weight: 400;
+text-align: center;
+}
+/* ===== Buttons / Helpers ===== */
+.btn { display: inline-block; padding: 10px 16px; border-radius: 10px; background: var(--accent); color: #111; font-weight: 700; text-decoration: none; }
+.btn.outline { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.section-sub { color: var(--muted); margin-top: -6px; }
+
+/* ===== Hero (OSRS) ===== */
+.hero { position: relative; min-height: 100vh; overflow: hidden; }
+.hero-osrs .hero-bg {
+position: absolute; inset: 0;
+background: center/cover no-repeat var(--bg);
+background-image: var(--hero);
+filter: saturate(1.05) contrast(1.05);
+}
+.hero-inner { position: relative; z-index: 3; padding-top: -5vh; text-shadow: 0 2px 6px rgba(0,0,0,.6); }
+.hero-gradient { position: absolute; inset: auto 0 0; height: 36vh; z-index: 2;
+background: linear-gradient(to bottom, rgba(15,15,18,0) 0%, rgba(15,15,18,.98) 100%);
+}
+.hero-title {
+font-size: clamp(3rem, 6vw, 4rem); /* slightly bigger than other titles */
+margin-bottom: 0.5rem;
+text-align: center;
 }
 
-/* Navigation */
-nav a {
-color: #ffcc00;
-margin: 0 10px;
-text-decoration: none;
+.hero-subtitle {
+font-size: clamp(1.8rem, 3vw, 2.4rem); /* smaller than hero-title */
+font-weight: 400;
+text-align: center;
 }
 
-nav a:hover {
-text-decoration: underline;
+/* Pixel-art crispness */
+.sprite, .sprite img { image-rendering: pixelated; image-rendering: crisp-edges; }
+
+/* ===== Gold medieval title ===== */
+.gold-title {
+font-family: Cinzel, serif;
+font-weight: 800;
+letter-spacing: 2px;
+font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+background: linear-gradient(#ffe38a, #d6a72b 55%, #8f6b15);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+text-shadow: 0 2px 0 rgba(0,0,0,.35);
+}
+.hero-title {
+font-size: clamp(3rem, 6vw, 4rem); /* slightly bigger than other titles */
+margin-bottom: 0.5rem;
+text-align: center;
 }
 
-/* Sections */
-section {
-padding: 2rem;
-max-width: 900px;
-margin: auto;
+.hero-subtitle {
+font-size: clamp(1.8rem, 3vw, 2.4rem); /* smaller than hero-title */
+font-weight: 400;
+text-align: center;
 }
 
-/* Links */
-a {
-color: #ffcc00;
+/* ===== Thumbnails ===== */
+.thumb-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.thumb { display: grid; grid-template-rows: auto auto; gap: 8px; text-decoration: none; color: var(--fg); }
+.thumb img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); background: #000; }
+.thumb span { font-weight: 600; }
+
+/* ===== About Cards ===== */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.card h3 { margin: 6px 0; font-size: 1.05rem; }
+.card p { margin: 0; color: var(--muted); }
+.pfp { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 10px; border: 1px solid var(--line); background: #000; }
+
+/* ===== Social Links ===== */
+<section id="links" class="section container">
+<h2 class="gold-title">MY LINKS</h2>
+
+<div class="socials">
+<a class="social youtube" href="https://youtube.com/@DueOSRS" target="_blank" rel="noopener" aria-label="YouTube">
+<!-- YouTube -->
+<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+<path fill="currentColor" d="M23.5 6.2a4 4 0 0 0-2.8-2.8C18.9 3 12 3 12 3s-6.9 0-8.7.4A4 4 0 0 0 .5 6.2 41 41 0 0 0 0 12a41 41 0 0 0 .5 5.8 4 4 0 0 0 2.8 2.8C4.9 21 12 21 12 21s6.9 0 8.7-.4a4 4 0 0 0 2.8-2.8A41 41 0 0 0 24 12a41 41 0 0 0-.5-5.8zM9.6 15.5V8.5L15.8 12l-6.2 3.5z"/>
+</svg>
+<span>YouTube</span>
+</a>
+
+<a class="social twitch" href="https://twitch.tv/dueosrs" target="_blank" rel="noopener" aria-label="Twitch">
+<!-- Twitch -->
+<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+<path fill="currentColor" d="M3 2h18v12.6l-4.6 4.4H12l-2.6 3H7.4V19H3V2zm16 11.4V4H5v12h3.4v3l3-3h5.4L19 13.4zM9.5 6.9h2V12h-2V6.9zm5 0h2V12h-2V6.9z"/>
+</svg>
+<span>Twitch</span>
+</a>
+
+<a class="social x" href="https://x.com/dueosrs" target="_blank" rel="noopener" aria-label="X">
+<!-- X / Twitter -->
+<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+<path fill="currentColor" d="M18.2 3H21l-6.6 7.5L22.4 21h-5.7l-4.5-6-5 6H3.3l7.1-8.5L1.9 3h5.8l4 5.4L18.2 3zM8.7 4.6H6.8l8.5 11.6h1.9L8.7 4.6z"/>
+</svg>
+<span>X</span>
+</a>
+</div>
+</section>
+<section id="links" class="section container">
+<h2 class="gold-title">MY LINKS</h2>
+
+<div class="socials">
+<a class="social youtube" href="https://youtube.com/@DueOSRS" target="_blank" rel="noopener" aria-label="YouTube">
+<!-- YouTube -->
+<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+<path fill="currentColor" d="M23.5 6.2a4 4 0 0 0-2.8-2.8C18.9 3 12 3 12 3s-6.9 0-8.7.4A4 4 0 0 0 .5 6.2 41 41 0 0 0 0 12a41 41 0 0 0 .5 5.8 4 4 0 0 0 2.8 2.8C4.9 21 12 21 12 21s6.9 0 8.7-.4a4 4 0 0 0 2.8-2.8A41 41 0 0 0 24 12a41 41 0 0 0-.5-5.8zM9.6 15.5V8.5L15.8 12l-6.2 3.5z"/>
+</svg>
+<span>YouTube</span>
+</a>
+
+<a class="social twitch" href="https://twitch.tv/dueosrs" target="_blank" rel="noopener" aria-label="Twitch">
+<!-- Twitch -->
+<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+<path fill="currentColor" d="M3 2h18v12.6l-4.6 4.4H12l-2.6 3H7.4V19H3V2zm16 11.4V4H5v12h3.4v3l3-3h5.4L19 13.4zM9.5 6.9h2V12h-2V6.9zm5 0h2V12h-2V6.9z"/>
+</svg>
+<span>Twitch</span>
+</a>
+
+<a class="social x" href="https://x.com/dueosrs" target="_blank" rel="noopener" aria-label="X">
+<!-- X / Twitter -->
+<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+<path fill="currentColor" d="M18.2 3H21l-6.6 7.5L22.4 21h-5.7l-4.5-6-5 6H3.3l7.1-8.5L1.9 3h5.8l4 5.4L18.2 3zM8.7 4.6H6.8l8.5 11.6h1.9L8.7 4.6z"/>
+</svg>
+<span>X</span>
+</a>
+</div>
+</section>
+<section id="links" class="section container">
+<h2 class="gold-title">MY LINKS</h2>
+
+/* --- Social links: force brand colors & remove default link styling --- */
+#links .socials { display: flex; gap: 14px; flex-wrap: wrap; }
+
+#links .socials .social {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 10px 14px;
+border-radius: 10px;
+border: 1px solid transparent;
+font-weight: 600;
+text-decoration: none !important;
+color: #fff !important; /* makes the SVGs white via currentColor */
+}
+
+#links .socials .social svg { display: block; }
+#links .socials .social path { fill: currentColor; }
+
+/* Brand backgrounds */
+#links .socials .social.youtube { background: #FF0000; border-color: #FF0000; }
+#links .socials .social.twitch { background: #9146FF; border-color: #9146FF; }
+#links .socials .social.x { background: #000000; border-color: #000000; }
+
+#links .socials .social:hover { filter: brightness(1.08); }
+
+/* ===== Footer ===== */
+.site-footer { border-top: 1px solid var(--line); padding: 18px 0; color: var(--muted); text-align: center; }
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 900px){
+.hero-inner { padding-top: 18vh; }
+.char { width: min(48vw, 520px); left: 8%; bottom: 8%; }
+.goblin{ width: min(30vw, 320px); right: 6%; bottom: 10%; }
+.h1 { left: 27%; bottom: 46%; }
+.h2 { left: 33%; bottom: 46%; }
+}
+@media (max-width: 600px){
+.links a { margin-left: 12px; }
+.hero-inner { padding-top: 16vh; }
+.char { width: min(58vw, 520px); left: 4%; bottom: 6%; }
+.goblin{ width: min(34vw, 320px); right: 2%; bottom: 8%; }
+.h1 { left: 29%; bottom: 47%; }
+.h2 { left: 36%; bottom: 47%; }
+}
+
+.thumb-placeholder {
+width: 100%;
+height: 160px;
+border-radius: 10px;
+border: 1px solid var(--line);
+background: #0b0b0e;
 }
